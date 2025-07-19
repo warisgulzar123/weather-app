@@ -1,0 +1,131 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #222;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dark-mode {
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: #f1f1f1;
+}
+
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: inherit;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+#backgroundImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.25; /* default for light mode */
+  transition: opacity 0.5s ease;
+}
+
+/* Optional dark mode styling */
+body.dark-mode {
+  background-color: #111;
+  color: #f1f1f1;
+}
